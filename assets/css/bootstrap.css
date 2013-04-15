@@ -3908,6 +3908,11 @@ input[type="submit"].btn.btn-mini {
   border-color: #eed3d7;
 }
 
+.alert-dejami {
+  border:1px #000 solid;
+  background-color:yellow
+}
+
 .alert-danger h4,
 .alert-error h4 {
   color: #b94a48;

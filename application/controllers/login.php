@@ -6,22 +6,26 @@ if (!defined('BASEPATH'))
 class Login extends CI_Controller {
 
     public function index() {
+        
         $this->load->helper('form');
+             
         $this->load->library('form_validation');
     
-        $this->form_validation->set_rules('username', 'Username', 'required|min_length[5]|is_unique[users.username]');
-        $this->form_validation->set_rules('passconf', 'Password Confirmation', 'required|trim|md5');
-        
+        $this->form_validation->set_rules('username', 'Username', 'required');
+        $this->form_validation->set_rules('password', 'Password Confirmation', 'required|trim|md5|min_length[5]');
+        //$this->form_validation->set_rules('ipaddresss','ip address','valid_ip');
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('login');
         } else {
             
         }
-        //$this->load->view('maintemplate/base', $data);
+        
+$this->load->view('maintemplate/jointemplate', 'base');        
+//$this->load->view('maintemplate/base', $data);
     }
 
 }
 
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
+/* End of file login.php */
+/* Location: ./application/controllers/login.php */

@@ -9,4 +9,20 @@ should be shown to the user.
  * 
  */
 ?>
+   
+<?php
+
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
+
+class Upload extends CI_Controller {
+
+    public function index() {
         
+        //$this->load->view('maintemplate/base', $data);
+    }
+
+}
+
+/* End of file upload.php */
+/* Location: ./application/controllers/upload.php */

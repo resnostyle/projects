@@ -11,8 +11,13 @@ If the login succeeds, the second web page described below should be displayed a
 <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
 <h1>Do your thing</h1>
 
+
+
+<div class="alert alert-dejami">
+<?php echo validation_errors(); ?>
+</div>
+    
 <?php
-echo validation_errors();
 
 echo form_open('login');
 

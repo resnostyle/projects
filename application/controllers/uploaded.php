@@ -6,3 +6,20 @@ the of the photo should be the full width of the browser window and the height o
 adjusted so as not to change the aspect ratio of the photo.
  */
 ?>
+
+<?php
+
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
+
+class Uploaded extends CI_Controller {
+
+    public function index() {
+        
+        //$this->load->view('maintemplate/base', $data);
+    }
+
+}
+
+/* End of file uploaded.php */
+/* Location: ./application/controllers/uploaded.php */
