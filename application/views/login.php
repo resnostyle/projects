@@ -12,7 +12,9 @@ If the login succeeds, the second web page described below should be displayed a
 <h1>Do your thing</h1>
 
 <?php
-echo form_open('login/submit');
+echo validation_errors();
+
+echo form_open('login');
 
 echo form_label("Username:",'username');
 echo form_input('username');
