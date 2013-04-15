@@ -1,0 +1,58 @@
+This problem will assess your ability to create a quality solution for a small website that 
+performs some basic functions that a good web developer should know how to do. The solution involves 
+writing code in HTML, JQuery, Javascript, CSS, CodeIgniter and PHP.
+
+The solution should take roughly 10-20 hours or less to complete. You may not be able to finish all 
+parts of the problem if you are not familiar with all the technologies so focus on the ones you do know 
+if that is the case and provide a partial solution.
+
+You may use publicly available resources such as SDK, toolkit, and language references but you cannot 
+receive assistance from another developer to help create the solution.
+
+Since your solution will require a server component, you may build the solution on any available server
+ of your choosing.  If you want to build your solution locally on your own computer, do so with a LAMP,
+ WAMP or MAMP installation (if you don’t know what that is, look it up).
+
+Your solution delivery includes all source code packaged into a zip file and emailed to mark@dejami.com 
+and idan@dejami.com. Provide the URL as well if the solution is available on a public server.
+
+****Problem Description****
+
+The website consists of three web pages. Each web page should be styled using CSS which includes colors, 
+font and element sizes. 
+
+The first web page is a login page. Present a form to the user with a User ID field, Password field, 
+and Login button. The placeholder text should be “User ID” in the User ID field and “Password” in the 
+Password field. A person eavesdropping on the user’s screen should not be able to tell what 
+password characters were typed. Clicking the Login button should send a login request to the server. 
+If the login succeeds, the second web page described below should be displayed and replace the login page.  If the login fails, an inline error should be displayed and the login page should NOT be reloaded. You can use a hard coded password on the server to validate the login against. A successful login also generates a new CodeIgniter user session where the User ID value is stored.
+
+The second page is a photo upload page. Here a file upload form is shown to the user which has an 
+Upload button too. The User ID value from the user’s session should show at the top. The user selects 
+an image file to upload and clicks Upload. The server must only accept files that have a .PNG or .JPG 
+extension and are not larger than 1MB in size.  If the check fails, the page reloads and an inline 
+error should show at the top indicating what the error was.  If the file is good, the third web page 
+should be shown to the user.
+
+The third page displays the uploaded photo.  The User ID value and the photo file name from the user’s 
+session should be displayed at the top. The uploaded photo is then displayed underneath that. The width 
+the of the photo should be the full width of the browser window and the height of the photo should be 
+adjusted so as not to change the aspect ratio of the photo.
+
+****Additional Requirements and Constraints****
+
+All error messages should be displayed in a red text color inside of an enclosing box. The box has a 
+black border and a yellow background color.
+
+Use JQuery as much as possible in place of equivalent Javascript code.
+
+If the user browses to a web page and they are not logged in yet, redirect to the login page.
+
+Implement proper data validation checks to prevent cross site scripting attacks and other forms of 
+attacks.
+
+Use a secure HTTP protocol to provide confidentiality of login credentials and user session information.
+
+All login/authentication attempts should be logged on the server side, whether successful or not.
+
+Comment your code appropriately
