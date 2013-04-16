@@ -3910,7 +3910,8 @@ input[type="submit"].btn.btn-mini {
 
 .alert-dejami {
   border:1px #000 solid;
-  background-color:yellow
+  background-color:yellow;
+  text-color:red;
 }
 
 .alert-danger h4,

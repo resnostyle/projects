@@ -8,25 +8,21 @@ If the login succeeds, the second web page described below should be displayed a
  */
 ?>
 
-<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
 <h1>Do your thing</h1>
 
-
-
-<div class="alert alert-dejami">
-<?php echo validation_errors(); ?>
-</div>
-    
-<?php
+<?php 
+//display errors
+echo validation_errors();
 
 echo form_open('login');
-
+echo form_fieldset('Login');
 echo form_label("Username:",'username');
 echo form_input('username');
 echo form_label('Password:','password');
 echo form_password('password');
-echo form_submit('submit', 'Submit');
+echo form_submit('submit', 'Login');
 //creating a hidden form item to submit user's ip address
 form_hidden('ipaddresss', $_SERVER('remote_addr'));
 echo form_close();
+echo form_fieldset_close(); 
 
