@@ -28,39 +28,36 @@ class Login extends CI_Controller {
                 //failed to pass validation
                 //reload login form 
                 $data['main_content'] = 'login';
-                $this->load->view('maintemplate/jointemplate', $data);
+                $this->load->view('maintemplate/jointnotloggedin', $data);
             } else {
                 // pass validation but needs checking against the db
                 //loading datbase helper
                 $this->load->database();
-                $this->load->model('user_verify');
-                $query = $this->user_verify->login();
+  //              $this->load->model('user_verify');
+//                $query = $this->user_verify->login();
 
-                if ($query) {
-                    $data = array(
-                        'username' => $this->input->post('user_name'),
-                        'is_logged_in' => true
-                    );
-                    $this->session->set_userdata($data);
+               // if ($query) {
+                 //   $data = array(
+                   //     'username' => $this->input->post('user_name'),
+                     //   'is_logged_in' => true
+              //      );
+                    $this->session->set_userdata($data);  
+ 
                     //great success - validated form and exist in the database
                     redirect('upload');
-                } else {
+             //  } else {
                     //failed db lookup
-                    $data['main_content'] = 'login';
-                    $this->load->view('maintemplate/jointemplate', $data);
-                }
-            }
-        } else {
+             //       $data['main_content'] = 'login';
+             //       $this->load->view('maintemplate/jointnotloggedin', $data);
+             //   }
+            } 
+        } else { 
             //have cookie and have expected values set
             redirect('upload');
         }
     }
 
-    public function logout() {
-        $this->session->sess_destroy();
-        $this->index();
-    }
-
+    
 }
 
 
