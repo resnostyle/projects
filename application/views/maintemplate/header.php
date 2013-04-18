@@ -11,7 +11,7 @@
     <link href="<?php echo base_url('/assets/css/bootstrap.css'); ?>" rel="stylesheet">
     <style>
       body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+       ap padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
       }
     </style>
     <link href="<?php echo base_url('/assets/css/bootstrap-responsive.css'); ?>" rel="stylesheet">

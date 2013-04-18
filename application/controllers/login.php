@@ -30,6 +30,7 @@ class Login extends CI_Controller {
                 //failed to pass validation
                 //reload login form 
                 $this->log_logins();
+                
                 $data['main_content'] = 'login';
                 $this->load->view('maintemplate/jointnotloggedin', $data);
             } else {
