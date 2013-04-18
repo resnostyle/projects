@@ -28,8 +28,13 @@ $password = array(
     'id'    => 'password'
 );
 
+$form_attributes = array(
+    'class' => 'login',
+    'id' => 'loginform'
+   
+);
 
-echo form_open('login');
+echo form_open('login',$form_attributes);
 echo form_fieldset('Login');
 echo form_label("Username:",'username');
 echo form_input($username);
@@ -45,3 +50,4 @@ echo form_fieldset_close();
 echo '<h2>Very Secure Credentials</h2>';
 echo '<p>username: dejami</p>';
 echo '<p>password: 123456</p>';
+

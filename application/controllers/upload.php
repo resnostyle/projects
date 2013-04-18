@@ -20,9 +20,10 @@ class Upload extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        //$this->is_logged_in();
+        $this->is_logged_in();
         $this->load->helper('url');
         $this->load->helper('form');
+        $this->load->library('session');
     }
 
     public function index() {
@@ -40,8 +41,7 @@ class Upload extends CI_Controller {
         $this->load->library('upload', $config);
 
         if (!$this->upload->do_upload()) {
-            //$error = array('error' => $this->upload->display_errors());
-            //$this->load->view('upload', $error);
+            
             $data['main_content'] = 'upload';
             $data['error'] = $this->upload->display_errors();
             $this->load->view('maintemplate/jointemplate', $data);
@@ -63,8 +63,9 @@ class Upload extends CI_Controller {
     }
 
     public function logout() {
+       // if i created a logout page this is how id do it
         $this->session->sess_destroy();
-        $this->index();
+        redirect('logout');
     }
 
 }

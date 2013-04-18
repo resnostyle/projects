@@ -5,10 +5,12 @@ if (!defined('BASEPATH'))
 
 class Login extends CI_Controller {
 
-    public function Login() {
+    function __construct() {
         //over ride all other functions with required base url
         parent::__construct();
         $this->load->helper('url');
+        $this->load->helper('file');
+        $this->load->library('session');
     }
 
     function index() {
@@ -27,37 +29,46 @@ class Login extends CI_Controller {
             if ($this->form_validation->run() == FALSE) {
                 //failed to pass validation
                 //reload login form 
+                $this->log_logins();
                 $data['main_content'] = 'login';
                 $this->load->view('maintemplate/jointnotloggedin', $data);
             } else {
+                $this->log_logins();
                 // pass validation but needs checking against the db
                 //hashed our super awesome password 
                 if ($this->input->post('username') === 'dejami' &&
-                    $this->input->post('password') === 'e10adc3949ba59abbe56e057f20f883e')
-                {
+                        $this->input->post('password') === 'e10adc3949ba59abbe56e057f20f883e') {
                     //validated and used the right password... lets go!
-                    redirect('upload');
-                }
+                    //creating a user session
+                    $data = array(
+                        'username' => $this->input->post('username'),
+                        'is_logged_in' => true
+                    );
 
-                else {
-                
-                    
+                    $this->session->set_userdata($data);
+                    //sending the user off to dream land    
+                    redirect('upload');
+                } else {
+
                     //they tried and their password was no good, send them packing
-                $data['main_content'] = 'login';
-                $this->load->view('maintemplate/jointnotloggedin', $data);
-                    
+                    $data['main_content'] = 'login';
+                    $this->load->view('maintemplate/jointnotloggedin', $data);
                 }
-                    
-            } 
-        } else { 
+            }
+        } else {
             //have cookie and have expected values set
             redirect('upload');
         }
     }
 
-    
-}
+    private function log_logins() {
+        //function to create or write to login file- not exactly purty, but itll work
+        if (!write_file('./login.txt', $this->input->post('ipaddresss'), 'a')) {
+            echo 'this is fail, i should know that already';
+        }
+    }
 
+}
 
 /* End of file login.php */
 /* Location: ./application/controllers/login.php */

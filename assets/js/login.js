@@ -20,4 +20,9 @@ $('#password').click(function(){
     $('#password').val('');
 });
 
+$('#loginform').click(function(){
+    $(".result").load("login");
+});
+
+
 });

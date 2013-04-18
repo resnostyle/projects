@@ -1,7 +1,10 @@
 <h1>Upload Your File Here</h1>
 
-
-
+<h2>Welcome, 
+<?php 
+echo $this->session->userdata('username');
+?>
+</h2>
 <div class="alert alert-dejami">
 <?php echo $error;  ?>
 </div>
