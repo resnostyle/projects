@@ -8,6 +8,8 @@
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 
+ 
+ 
 .clearfix {
   *zoom: 1;
 }
@@ -3908,7 +3910,7 @@ input[type="submit"].btn.btn-mini {
   border-color: #eed3d7;
 }
 
-.alert-dejami {
+.alert-dejami{
   border:1px #000 solid;
   background-color:yellow;
   text-color:red;

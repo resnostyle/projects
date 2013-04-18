@@ -31,25 +31,23 @@ class Login extends CI_Controller {
                 $this->load->view('maintemplate/jointnotloggedin', $data);
             } else {
                 // pass validation but needs checking against the db
-                //loading datbase helper
-                $this->load->database();
-  //              $this->load->model('user_verify');
-//                $query = $this->user_verify->login();
-
-               // if ($query) {
-                 //   $data = array(
-                   //     'username' => $this->input->post('user_name'),
-                     //   'is_logged_in' => true
-              //      );
-                    $this->session->set_userdata($data);  
- 
-                    //great success - validated form and exist in the database
+                //hashed our super awesome password 
+                if ($this->input->post('username') === 'dejami' &&
+                    $this->input->post('password') === 'e10adc3949ba59abbe56e057f20f883e')
+                {
+                    //validated and used the right password... lets go!
                     redirect('upload');
-             //  } else {
-                    //failed db lookup
-             //       $data['main_content'] = 'login';
-             //       $this->load->view('maintemplate/jointnotloggedin', $data);
-             //   }
+                }
+
+                else {
+                
+                    
+                    //they tried and their password was no good, send them packing
+                $data['main_content'] = 'login';
+                $this->load->view('maintemplate/jointnotloggedin', $data);
+                    
+                }
+                    
             } 
         } else { 
             //have cookie and have expected values set

@@ -20,15 +20,37 @@ class Upload extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        // $this->is_logged_in();
+        //$this->is_logged_in();
         $this->load->helper('url');
         $this->load->helper('form');
     }
 
     public function index() {
-
+        
         $data['main_content'] = 'upload';
+        $data['error'] = '';
         $this->load->view('maintemplate/jointemplate', $data);
+    }
+
+    public function do_upload() {
+        $config['upload_path'] = './uploads/';
+        $config['allowed_types'] = 'png|jpg';
+        $config['max_size'] = '1024';
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload()) {
+            //$error = array('error' => $this->upload->display_errors());
+            //$this->load->view('upload', $error);
+            $data['main_content'] = 'upload';
+            $data['error'] = $this->upload->display_errors();
+            $this->load->view('maintemplate/jointemplate', $data);
+        } else {
+            $data['main_content'] = 'completed_upload';
+            $data['uploaded_details'] = array('upload_data' => $this->upload->data());
+            $this->load->view('maintemplate/jointemplate', $data);
+
+        }
     }
 
     private function is_logged_in() {
