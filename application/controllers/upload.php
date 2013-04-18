@@ -27,7 +27,7 @@ class Upload extends CI_Controller {
     }
 
     public function index() {
-        
+
         $data['main_content'] = 'upload';
         $data['error'] = '';
         $this->load->view('maintemplate/jointemplate', $data);
@@ -41,7 +41,7 @@ class Upload extends CI_Controller {
         $this->load->library('upload', $config);
 
         if (!$this->upload->do_upload()) {
-            
+
             $data['main_content'] = 'upload';
             $data['error'] = $this->upload->display_errors();
             $this->load->view('maintemplate/jointemplate', $data);
@@ -49,7 +49,6 @@ class Upload extends CI_Controller {
             $data['main_content'] = 'completed_upload';
             $data['uploaded_details'] = array('upload_data' => $this->upload->data());
             $this->load->view('maintemplate/jointemplate', $data);
-
         }
     }
 
@@ -63,9 +62,9 @@ class Upload extends CI_Controller {
     }
 
     public function logout() {
-       // if i created a logout page this is how id do it
+        //destroy session and logout
         $this->session->sess_destroy();
-        redirect('logout');
+        redirect('login');
     }
 
 }

@@ -39,11 +39,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#">Lorem Ispsum</a>
+          <a class="brand" href="#">Awesome Image Uploader</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li><a href="<?php echo index_page(); ?>">Home</a></li>
-              <li><a href="<?php  echo base_url("logout"); ?>">Logout</a></li>
+              <li><a href="<?php echo site_url("upload"); ?>">Home</a></li>
+              <li><a href="<?php echo site_url("upload/logout"); ?>">Logout</a></li>
               <!-- <li><a href="#contact">Contact</a></li> -->
             </ul>
           </div><!--/.nav-collapse -->

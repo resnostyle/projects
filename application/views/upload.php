@@ -5,13 +5,17 @@
 echo $this->session->userdata('username');
 ?>
 </h2>
-<div class="alert alert-dejami">
-<?php echo $error;  ?>
-</div>
 
 <?php
-echo form_open_multipart('upload/do_upload');
 
+//hide the error div if it's not needed
+if ($error != ''){
+echo "<div class='alert alert-dejami'>";
+echo $error; 
+echo "</div>";
+}
+
+echo form_open_multipart('upload/do_upload');
 
 echo form_label("Upload:",'upload');
 
