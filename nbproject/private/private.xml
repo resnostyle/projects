@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
+        <file>file:/var/www/dejami/todo</file>
+        <file>file:/var/www/dejami/application/controllers/uploaded.php</file>
+        <file>file:/var/www/dejami/application/controllers/login.php</file>
+        <file>file:/var/www/dejami/application/views/upload.php</file>
+        <file>file:/var/www/dejami/application/views/maintemplate/header.php</file>
+        <file>file:/var/www/dejami/application/views/maintemplate/footer.php</file>
+        <file>file:/var/www/dejami/application/views/maintemplate/headernotloggedin.php</file>
+        <file>file:/var/www/dejami/application/views/login.php</file>
+        <file>file:/var/www/dejami/assets/css/bootstrap.css</file>
+    </open-files>
 </project-private>
